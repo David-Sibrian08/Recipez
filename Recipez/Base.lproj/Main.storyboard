@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Recipez" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Recipez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,14 +22,14 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="YLj-lp-M0b">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="80" id="YLj-lp-M0b" customClass="RecipeCell" customModule="Recipez" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YLj-lp-M0b" id="Vw1-Vs-IaN">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PF7-C3-8P4">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PF7-C3-8P4">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom's Happy Hamburgers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEH-o7-eeI">
@@ -61,6 +61,10 @@
                                                 <constraint firstItem="ZEH-o7-eeI" firstAttribute="centerY" secondItem="Vw1-Vs-IaN" secondAttribute="centerY" constant="2" id="yJe-tl-q6R"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeImg" destination="PF7-C3-8P4" id="EwK-Oy-wLa"/>
+                                            <outlet property="recipeTitle" destination="ZEH-o7-eeI" id="CJw-ZB-DOt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -89,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1125" y="-678"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Recipe View Controller-->
         <scene sceneID="u5b-tb-9ii">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qvu-zv-keY" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qvu-zv-keY" customClass="CreateRecipeViewController" customModule="Recipez" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="58u-53-F8D"/>
                         <viewControllerLayoutGuide type="bottom" id="wSb-0g-JoN"/>
@@ -136,6 +140,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCC-th-4aM">
                                                 <rect key="frame" x="213" y="386" width="175" height="175"/>
                                                 <state key="normal" title="+ Add Image"/>
+                                                <connections>
+                                                    <action selector="addImageButtonPressed:" destination="qvu-zv-keY" eventType="touchUpInside" id="xmY-ul-8jx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uus-EL-5ry">
                                                 <rect key="frame" x="213" y="611" width="175" height="30"/>
@@ -144,6 +151,9 @@
                                                     <constraint firstAttribute="width" constant="175" id="P5u-O5-Chm"/>
                                                 </constraints>
                                                 <state key="normal" title="Create Recipe"/>
+                                                <connections>
+                                                    <action selector="createRecipeButtonPressed:" destination="qvu-zv-keY" eventType="touchUpInside" id="Gwt-TC-fZZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYu-XR-3Cc">
                                                 <rect key="frame" x="8" y="130" width="105" height="21"/>
@@ -200,6 +210,13 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="750"/>
+                    <connections>
+                        <outlet property="addImageButton" destination="FCC-th-4aM" id="wPU-J2-vkU"/>
+                        <outlet property="recipeImage" destination="qrd-RO-owb" id="TMK-QU-9Bk"/>
+                        <outlet property="recipeIngredients" destination="7uh-L8-vqk" id="xa3-SG-GJp"/>
+                        <outlet property="recipeName" destination="QIK-s6-F6z" id="d8L-Db-Wy8"/>
+                        <outlet property="recipeSteps" destination="FyJ-QS-voo" id="EDb-Y0-cIz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="veZ-NX-Btz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
