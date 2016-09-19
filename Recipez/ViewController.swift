@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var recipes = [Recipe]()
 
     override func viewDidLoad() {
@@ -55,6 +56,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return RecipeCell()
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            //remove the recipe from core data
+            
+            let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDel.managedObjectContext
+            
+            managedContext.deleteObject(recipes[indexPath.row])
+            
+            //remove from the table
+            recipes.removeAtIndex(indexPath.row)
+            
+            self.tableView.reloadData()
+            
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
@@ -62,21 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+    
 
 }
-
-
-/*
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
- */
-
-
