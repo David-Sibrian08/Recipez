@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NEM-FF-tp1">
     <dependencies>
         <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,7 +21,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kvH-uX-31Z">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="80" id="YLj-lp-M0b" customClass="RecipeCell" customModule="Recipez" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
@@ -41,7 +43,7 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.9491154101" green="0.9491154101" blue="0.9491154101" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -69,7 +71,6 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kvH-uX-31Z" secondAttribute="trailing" id="Xlg-Df-5Ah"/>
                             <constraint firstItem="kvH-uX-31Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aP2-G9-Lxc"/>
@@ -79,7 +80,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7qx-lb-Syh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dUq-th-SMm">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="qvu-zv-keY" kind="show" id="0k3-y4-fnb"/>
                             </connections>
@@ -91,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="-678"/>
+            <point key="canvasLocation" x="906" y="-650"/>
         </scene>
         <!--Create Recipe View Controller-->
         <scene sceneID="u5b-tb-9ii">
@@ -162,7 +163,7 @@
                                                     <constraint firstAttribute="width" constant="105" id="Wvz-WO-FOY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -199,7 +200,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wSb-0g-JoN" firstAttribute="top" secondItem="kt3-x2-U6H" secondAttribute="bottom" id="2ff-wI-IB6"/>
                             <constraint firstAttribute="trailing" secondItem="kt3-x2-U6H" secondAttribute="trailing" id="5Eu-xR-MET"/>
@@ -239,7 +240,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVg-nH-esN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="379" y="-353"/>
+            <point key="canvasLocation" x="173" y="-663"/>
         </scene>
     </scenes>
 </document>
